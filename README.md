@@ -4,8 +4,6 @@ Agile Poker app written in flutter with images from unsplash
 
 ## Image Credits
 
-Photo by Camila Quintero Franco on Unsplash
-
 0.png
 [Photo by Camila Quintero Franco on Unsplash](https://unsplash.com/@quinterocamilaa)
 
