@@ -1,16 +1,34 @@
 # agilpoker
 
-A new Flutter project.
+Agile Poker app written in flutter with images from unsplash
 
-## Getting Started
+## Image Credits
 
-This project is a starting point for a Flutter application.
+Photo by Camila Quintero Franco on Unsplash
 
-A few resources to get you started if this is your first Flutter project:
+0.png
+[Photo by Camila Quintero Franco on Unsplash](https://unsplash.com/@quinterocamilaa)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+0,5.png
+[Photo by davisco on Unsplash](https://unsplash.com/@codytdavis)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1.png
+[Photo by Jon Tyson on Unsplash](https://unsplash.com/@jontyson)
+
+2.png
+[Photo by Elena Koycheva on Unsplash](https://unsplash.com/@lenneek)
+
+3.png
+[Photo by Clem Onojeghuo on Unsplash](https://unsplash.com/@clemono2)
+
+5.png
+[Photo by Ryan Johns on Unsplash](https://unsplash.com/@ryanjohns)
+
+8.png
+[Photo by 🇨🇭 Claudio Schwarz | @purzlbaum on Unsplash](https://unsplash.com/@purzlbaum)
+
+13.png
+[Photo by Waldemar Brandt on Unsplash](https://unsplash.com/@waldemarbrandt67w)
+
+20.png
+[Photo by Kristian Strand on Unsplash](https://unsplash.com/@kristianstrand)
