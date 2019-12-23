@@ -17,12 +17,12 @@ class MyAppState extends State<MyApp> {
 
   void answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      // questionIndex = questionIndex + 1;
     });
     print(questionIndex);
   }
 
-  var questions = ['0?', '1?'];
+  var questions = ['0', '0,5', '1', '2', '3', '5', '8', '13', '20'];
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +35,102 @@ class MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             Text(questions[questionIndex]),
-            RaisedButton(child: Text('Antwort1'), onPressed: answerQuestion),
-            RaisedButton(
-              child: Text('Antwort2'),
-              onPressed: () => print('Antwort 2'),
-            ),
+            // RaisedButton(child: Text('Antwort1'), onPressed: answerQuestion),
+            // RaisedButton(
+            //   child: Text('Antwort2'),
+            //   onPressed: () => print('Antwort 2'),
+            // ),
 
             // Template für den Button, zieht Bezeichnung aus der Liste
             // setzt den Index auf festen Wert
-            
+
             RaisedButton(
               child: Text(questions[0]),
               onPressed: () {
                 // bischen Code
+                questionIndex = 0;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[1]),
+              onPressed: () {
+                // bischen Code
                 questionIndex = 1;
                 print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[2]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 2;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[3]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 3;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[4]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 4;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[5]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 5;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[6]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 6;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[7]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 7;
+                print(questionIndex);
+                answerQuestion();
+              },
+            ),
+
+            RaisedButton(
+              child: Text(questions[8]),
+              onPressed: () {
+                // bischen Code
+                questionIndex = 8;
+                print(questionIndex);
+                answerQuestion();
               },
             ),
           ],
