@@ -20,16 +20,7 @@ class MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     menuDataList = [
-      // new MenuData(Icons.home, (context, menuData) {
-      //   Scaffold.of(context).showSnackBar(new SnackBar(
-      //       content: new Text('you have pressed ${menuData.labelText}')));
-      // }, labelText: 'home'),
-      // new MenuData(Icons.sync_disabled, (context, menuData) {
-      //   setState(() {
-      //     menuData.enable = !menuData.enable;
-      //     menuData.icon = menuData.enable ? Icons.sync : Icons.sync_disabled;
-      //   });
-      // }, labelText: 'enable'),
+     
       new MenuData(Icons.arrow_left, (context, menuData) {
         questionIndex = 0;
         print(questionIndex);
@@ -104,87 +95,9 @@ class MyAppState extends State<MyApp> {
         floatingActionButtonLocation: fabMenuLocation,
         body: ListView(
           children: <Widget>[
-            Text(questions[questionIndex]),
+           // Text(questions[questionIndex]),
             Image.asset('assets/' + questions[questionIndex] + '.png'),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[0]),
-                onPressed: () {
-                  // bischen Code
-                  questionIndex = 0;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[1]),
-                onPressed: () {
-                  questionIndex = 1;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[2]),
-                onPressed: () {
-                  questionIndex = 2;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[3]),
-                onPressed: () {
-                  questionIndex = 3;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[4]),
-                onPressed: () {
-                  questionIndex = 4;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[5]),
-                onPressed: () {
-                  questionIndex = 5;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[6]),
-                onPressed: () {
-                  questionIndex = 6;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[7]),
-                onPressed: () {
-                  questionIndex = 7;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[8]),
-                onPressed: () {
-                  questionIndex = 8;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
+            
           ],
         ),
       ),
