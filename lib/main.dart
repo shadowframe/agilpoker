@@ -32,9 +32,10 @@ class MyAppState extends State<MyApp> {
           title: Text('Agil Beer Poker'),
           backgroundColor: Colors.pinkAccent,
         ),
-        body: Column(
+        body: ListView(
           children: <Widget>[
             Text(questions[questionIndex]),
+            Image.asset('assets/1.png'),
             // RaisedButton(child: Text('Antwort1'), onPressed: answerQuestion),
             // RaisedButton(
             //   child: Text('Antwort2'),
