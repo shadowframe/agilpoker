@@ -35,7 +35,7 @@ class MyAppState extends State<MyApp> {
         body: ListView(
           children: <Widget>[
             Text(questions[questionIndex]),
-            Image.asset('assets/1.png'),
+            Image.asset('assets/'+ questions[questionIndex] + '.png'),
             // RaisedButton(child: Text('Antwort1'), onPressed: answerQuestion),
             // RaisedButton(
             //   child: Text('Antwort2'),
