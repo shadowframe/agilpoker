@@ -162,8 +162,10 @@ class MyAppState extends State<MyApp> {
                         FlatButton(
                           child: const Text('THE CODE IS AVAILABLE ON GITHUB'),
                           onPressed: () async {
-                            if (await canLaunch("http://google.de")) {
-                              await launch("http://google.de");
+                            if (await canLaunch(
+                                "https://github.com/shadowframe/agilpoker")) {
+                              await launch(
+                                  "https://github.com/shadowframe/agilpoker");
                             }
                           },
                         ),
