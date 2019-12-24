@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fab_menu/fab_menu.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,8 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  List<MenuData> menuDataList;
-
   var copyright = 'Photo by Brendan Church on Unsplash\n\n'
       'Photo by Camila Quintero Franco on Unsplash\n\n'
       'Photo by davisco on Unsplash\n\n'
@@ -27,36 +24,6 @@ class MyAppState extends State<MyApp> {
       'Photo by Waldemar Brandt on Unsplash\n\n'
       'Photo by Kristian Strand on Unsplash\n\n'
       "stuff for the 3rd paragraph\n\n";
-
-  @override
-  void initState() {
-    super.initState();
-    menuDataList = [
-      new MenuData(Icons.copyright, (context, menuData) {
-        Scaffold.of(context)
-            .showSnackBar(new SnackBar(content: new Text(copyright)));
-      }, labelText: 'Copyright'),
-      new MenuData(Icons.home, (context, menuData) {
-        Scaffold.of(context).showSnackBar(new SnackBar(
-          content: RaisedButton(
-            child: Text(questions[0]),
-            onPressed: () {
-              // bischen Code
-              questionIndex = 0;
-              print(questionIndex);
-              answerQuestion();
-            },
-          ),
-        ));
-      }, labelText: 'home'),
-      new MenuData(Icons.sync_disabled, (context, menuData) {
-        setState(() {
-          menuData.enable = !menuData.enable;
-          menuData.icon = menuData.enable ? Icons.sync : Icons.sync_disabled;
-        });
-      }, labelText: 'enable')
-    ];
-  }
 
   var questionIndex = 9;
 
@@ -77,96 +44,131 @@ class MyAppState extends State<MyApp> {
           title: Text('Agil Poker'),
           backgroundColor: Colors.pinkAccent,
         ),
-        floatingActionButton: new FabMenu(
-          mainIcon: Icons.help,
-          menus: menuDataList,
-          maskColor: Colors.black,
-        ),
-        floatingActionButtonLocation: fabMenuLocation,
         body: ListView(
           children: <Widget>[
-            Text(questions[questionIndex]),
+            // Text(questions[questionIndex]),
             Image.asset('assets/' + questions[questionIndex] + '.png'),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[0]),
-                onPressed: () {
-                  // bischen Code
-                  questionIndex = 0;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[1]),
-                onPressed: () {
-                  questionIndex = 1;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[2]),
-                onPressed: () {
-                  questionIndex = 2;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[3]),
-                onPressed: () {
-                  questionIndex = 3;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[4]),
-                onPressed: () {
-                  questionIndex = 4;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[5]),
-                onPressed: () {
-                  questionIndex = 5;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              RaisedButton(
-                child: Text(questions[6]),
-                onPressed: () {
-                  questionIndex = 6;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[7]),
-                onPressed: () {
-                  questionIndex = 7;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-              RaisedButton(
-                child: Text(questions[8]),
-                onPressed: () {
-                  questionIndex = 8;
-                  print(questionIndex);
-                  answerQuestion();
-                },
-              ),
-            ]),
           ],
+        ),
+        drawer: Drawer(
+          // Add a ListView to the drawer. This ensures the user can scroll
+          // through the options in the drawer if there isn't enough vertical
+          // space to fit everything.
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text(''),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/start.png'),
+                      fit: BoxFit.cover,
+                    )),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/0.png'),
+                ),
+                title: Text(questions[0]),
+                onTap: () {
+                  questionIndex = 0;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/0,5.png'),
+                ),
+                title: Text(questions[1]),
+                onTap: () {
+                  questionIndex = 1;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/1.png'),
+                ),
+                title: Text(questions[2]),
+                onTap: () {
+                  questionIndex = 2;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/2.png'),
+                ),
+                title: Text(questions[3]),
+                onTap: () {
+                  questionIndex = 3;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/3.png'),
+                ),
+                title: Text(questions[4]),
+                onTap: () {
+                  questionIndex = 4;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/5.png'),
+                ),
+                title: Text(questions[5]),
+                onTap: () {
+                  questionIndex = 5;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/8.png'),
+                ),
+                title: Text(questions[6]),
+                onTap: () {
+                  questionIndex = 6;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/13.png'),
+                ),
+                title: Text(questions[7]),
+                onTap: () {
+                  questionIndex = 7;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/20.png'),
+                ),
+                title: Text(questions[8]),
+                onTap: () {
+                  questionIndex = 8;
+                  answerQuestion();
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.copyright),
+                title: Text('Image Copyrights'),
+                onTap: () {
+                  Text('hsdaf');
+                  // Update the state of the app
+                  // ...
+                  // Then close the drawer
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
