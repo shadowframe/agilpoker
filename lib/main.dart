@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  var copyright = 'Photo by Brendan Church on Unsplash\n\n'
+  var copyright = 'Photo by İrfan Simsar on Unsplash\n\n'
       'Photo by Camila Quintero Franco on Unsplash\n\n'
       'Photo by davisco on Unsplash\n\n'
       'Photo by Jon Tyson on Unsplash\n\n'
@@ -22,8 +22,7 @@ class MyAppState extends State<MyApp> {
       'Photo by Ryan Johns on Unsplash\n\n'
       'Photo by 🇨🇭 Claudio Schwarz on Unsplash\n\n'
       'Photo by Waldemar Brandt on Unsplash\n\n'
-      'Photo by Kristian Strand on Unsplash\n\n'
-      "stuff for the 3rd paragraph\n\n";
+      'Photo by Kristian Strand on Unsplash\n\n';
 
   var questionIndex = 9;
 
@@ -160,13 +159,8 @@ class MyAppState extends State<MyApp> {
               ListTile(
                 leading: Icon(Icons.copyright),
                 title: Text('Image Copyrights'),
-                onTap: () {
-                  Text('hsdaf');
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                },
               ),
+              Text(copyright)
             ],
           ),
         ),
