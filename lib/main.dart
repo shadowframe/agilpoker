@@ -29,7 +29,7 @@ class MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Agil Beer Poker'),
+          title: Text('Agil Poker'),
           backgroundColor: Colors.pinkAccent,
         ),
         body: ListView(
