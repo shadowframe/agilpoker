@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,16 +14,8 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  var copyright = 'Photo by İrfan Simsar on Unsplash\n\n'
-      'Photo by Camila Quintero Franco on Unsplash\n\n'
-      'Photo by davisco on Unsplash\n\n'
-      'Photo by Jon Tyson on Unsplash\n\n'
-      'Photo by Elena Koycheva on Unsplash\n\n'
-      'Photo by Clem Onojeghuo on Unsplash\n\n'
-      'Photo by Ryan Johns on Unsplash\n\n'
-      'Photo by 🇨🇭 Claudio Schwarz on Unsplash\n\n'
-      'Photo by Waldemar Brandt on Unsplash\n\n'
-      'Photo by Kristian Strand on Unsplash\n\n';
+  var copyright =
+      'Photos by İrfan Simsar, Camila Quintero Franco, davisco, Jon Tyson, Elena Koycheva, Clem Onojeghuo, Ryan Johns, 🇨🇭 Claudio Schwarz, Waldemar Brandt, Kristian Strand on Unsplash';
 
   var questionIndex = 9;
 
@@ -156,11 +149,29 @@ class MyAppState extends State<MyApp> {
                   answerQuestion();
                 },
               ),
-              ListTile(
-                leading: Icon(Icons.copyright),
-                title: Text('Image Copyrights'),
+              Card(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    ListTile(
+                      leading: Icon(Icons.copyright),
+                      subtitle: Text(copyright),
+                    ),
+                    ButtonBar(
+                      children: <Widget>[
+                        FlatButton(
+                          child: const Text('THE CODE IS AVAILABLE ON GITHUB'),
+                          onPressed: () async {
+                            if (await canLaunch("http://google.de")) {
+                              await launch("http://google.de");
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              Text(copyright)
             ],
           ),
         ),
